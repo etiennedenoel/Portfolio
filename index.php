@@ -1,66 +1,17 @@
 <?php
-	get_header();
-?>
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
-	<div id="content">
-		<div id="accuP">
-                    <div id="imageFond"><img width="880px" height="524px" alt="Etienne Denoel WebDesigner & WebDeveloper" src="<?php bloginfo('template_url') ?>/img/moi.png" /></div>
-		    <div id="pres" class="dbf">
-			
-			
-			<?php
-				$args = array( 'post_type' => 'skills', 'posts_per_page' => 3 );
-				$loop = new WP_Query( $args );
-				if ( $loop->have_posts() ) :
-					
-					while($loop->have_posts()):
-						$loop->the_post();
-						
-			?>
-			<div class="sep <?php post_class(); ?>">
-				<h2 class='titre'><?php the_title(); ?></h2> 
-				<p><?php the_content(); ?></p>
-				
-			</div>
-			<?php
-				endwhile;
-				endif;
-			?>
-		    </div>
-		</div>
-		<div id="news">
-			<h2>Dernières news</h2>
-			
-				<?php
-					query_posts('showposts=3'); 
-					if(have_posts()):
-					while(have_posts()):
-					
-					the_post();
-				?>
-				<section class="dbf">
-					<article>
-					<?php the_post_thumbnail('folio-work'); ?>
-						<hgroup>
-							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-							<h4><?php _e('Publié le') ?> <?php echo get_the_date(); ?></h4>
-						</hgroup>
-						<div class="<?php post_class(); ?>">
-							
-							<?php the_content(); ?>
-						</div>
-						
-					</article>
-				
-				</section>
-				<?php
-					endwhile;
-					endif;
-				?>
-		</div>
-	</div>
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define('WP_USE_THEMES', true);
 
-<?php
-	get_footer();
-
-?>
+/** Loads the WordPress Environment and Template */
+require('./wp-blog-header.php');
