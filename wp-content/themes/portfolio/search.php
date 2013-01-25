@@ -8,8 +8,25 @@
  */
 
 get_header(); ?>
+<div id="profo">
+    <h2 id="tSlide">Derniers Travaux</h2>
+    <div id="larg" class="slider-wrapper">
+        <div id="featured">
+            <?php
+                $loop = new WP_query(array('post_type'=>'slides'));
+                if($loop->have_posts()):
+                while($loop->have_posts()):
+                $loop->the_post();
+            ?>
+            <?php the_post_thumbnail('slide'); ?>
+            <?php
+            endwhile;
+            endif;
+            ?>
+        </div>
+    </div>
+</div>
 
-		
 			<div id="content" role="main">
 				<section id="primary">
 
@@ -22,27 +39,27 @@ get_header(); ?>
 				<?php portfolio_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
-				
+
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php
 						get_template_part( 'content', get_post_format() );
 					?>
 					<?php global $more; $more = 0; ?>
-				
+
 					<article class="search">
 					<?php the_post_thumbnail('folio-work'); ?>
 						<section class="contenu">
 							<hgroup>
 								<h3 class="search"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							</hgroup>
-							<div class="search <?php post_class(); ?>">
+							<div class="search" <?php post_class(); ?>>
 							    <?php the_content(); ?>
 							</div>
 						</section>
 					</article>
-				
-				
+
+
 
 				<?php endwhile; ?>
 </section>
@@ -63,7 +80,7 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			
+
 		</section><!-- #primary -->
 </div><!-- #content -->
 <?php get_footer(); ?>

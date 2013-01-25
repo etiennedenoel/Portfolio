@@ -9,7 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php bloginfo('name') ?></title>
         <meta name="description" content="<?php bloginfo('description') ?>">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="initial-scale=1.0">
         <meta name="Author" content="Etienne Denoel, WebDesigner. http://www.etiennedenoel.be" >
         <meta name="Keywords" content="etienne denoel, internet, design, web, web design, site, créations, creations, web developper, portfolio, infographiste, infographie, liège, belgique, inpres" >
         <link rel="icon" type="image/ico" href="<?php bloginfo('template_url') ?>/img/favicon.ico" />
@@ -25,7 +25,7 @@
     </head>
     <body>
     <div id="wrapper">
-        <div id="header">
+        <header id="header">
             <div id="headin">
                 <!--[if lt IE 7]>
                     <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -33,28 +33,33 @@
 
                 <!-- Add your site or application content here -->
                 <div id="logo">
-                    <h1><a href="<?php bloginfo('url') ?>/index.php"><img width="345px" height="88px" alt="Logo Etienne Denoel WebDesigner & WebDesigner" src="<?php bloginfo('template_url') ?>/img/logo.png"></a></h1>
+                    <h1><a href="<?php bloginfo('url') ?>/index.php"><img width="345px" height="88px" alt="Etienne Denoel WebDesigner & WebDesigner" src="<?php bloginfo('template_url') ?>/img/logo.png"></a></h1>
                 </div>
-                <?php wp_nav_menu('header_menu') ?>
+                <?php
+                    $defaults = array(
+                        'theme_location'  => '',
+                        'menu'            => '',
+                        'container'       => 'nav',
+                        'container_class' => '',
+                        'container_id'    => '',
+                        'menu_class'      => 'menu',
+                        'menu_id'         => '',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'before'          => '',
+                        'after'           => '',
+                        'link_before'     => '',
+                        'link_after'      => '',
+                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'depth'           => 0,
+                        'walker'          => ''
+                    );
+
+                    wp_nav_menu( $defaults, 'header_menu' );
+
+                ?>
             </div>
-        </div>
-        <div id="profo">
-            <h2 id="tSlide">Derniers Travaux</h2>
-            <div id="larg" class="slider-wrapper">
-                <div id="featured">
-                    <?php
-                        $loop = new WP_query(array('post_type'=>'slides'));
-                        if($loop->have_posts()):
-                        while($loop->have_posts()):
-                        $loop->the_post();
-                    ?>
-                    <?php the_post_thumbnail('slide'); ?>
-                    <?php
-                    endwhile;
-                    endif;
-                    ?>
-                </div>
-            </div>
-        </div>
+        </header>
+
 
 
