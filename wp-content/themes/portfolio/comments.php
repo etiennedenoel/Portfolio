@@ -1,6 +1,6 @@
 	<div id="comments">
 	<?php if ( post_password_required() ) : ?>
-		<p class="nopassword"><?php _e( 'Cet article est protéger par un mot de passe. Entrez le mot de passe pour commenter', 'portfolio' ); ?></p>
+		<p class="nopassword"><?php _e( 'Cet article est prot?ger par un mot de passe. Entrez le mot de passe pour commenter', 'portfolio' ); ?></p>
 	</div><!-- #comments -->
 	<?php
 			/* Stop the rest of comments.php from being processed,
@@ -25,11 +25,11 @@
 		<nav id="comment-nav-above">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'portfolio' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Anciens commentaires', 'portfolio' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Commentaires récents &rarr;', 'portfolio' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Commentaires r?cents &rarr;', 'portfolio' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
-		<ol class="commentlist">
+		<ol class="commentlist" itemprop="comment">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
 				 * to use portfolio_comment() to format the comments.
@@ -45,7 +45,7 @@
 		<nav id="comment-nav-below">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'portfolio' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Anciens commentaires', 'portfolio' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Commentaires récents &rarr;', 'portfolio' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Commentaires r?cents &rarr;', 'portfolio' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
@@ -55,7 +55,7 @@
 		 */
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="nocomments"><?php _e( 'Les commentaires sont fermés', 'portfolio' ); ?></p>
+		<p class="nocomments"><?php _e( 'Les commentaires sont ferm?s', 'portfolio' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>

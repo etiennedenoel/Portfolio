@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-	<div id="content">
+	<div id="content" role="main">
 		<div id="formation" class="dbf">
 
 					<?php
@@ -32,8 +32,8 @@
 					?>
 					<div <?php post_class(); ?>>
 						<a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>"><?php the_post_thumbnail('folio-work'); ?></a>
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<p><?php the_content(); ?></p>
+						<h3><a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>"><?php the_title(); ?></a></h3>
+						<?php the_content(); ?>
 						<a class='plusInf' href="<?php the_permalink(); ?>" title="Plus d'informations sur le travail">Plus d'infos</a>
 
 					</div>

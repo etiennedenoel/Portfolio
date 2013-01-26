@@ -20,7 +20,7 @@
     </div>
 </div>
 
-	<div id="content">
+	<div id="content" role="main">
 
 		<?php
 					if(have_posts()):
@@ -28,17 +28,20 @@
 					the_post();
 				?>
 				<section class="dbf">
-					<article class="single">
+					<article class="single" itemscope="" itemtype="http://schema.org/Blog">
 
-						<h2 class="titre"><?php the_title(); ?></h2>
-						<p class="dateP"><?php _e('Publié le') ?> <?php echo get_the_date(); ?> par <?php echo get_the_author(); ?></p>
+						<h2 class="titre" itemprop="name"><?php the_title(); ?></h2>
+						<p class="dateP" itemprop="datePublished"><?php _e('Publié le') ?> <?php echo get_the_date(); ?> par <span itemprop="author"><?php echo get_the_author(); ?></span></p>
 
 						<?php the_post_thumbnail('posta'); ?>
-						<div <?php post_class(); ?>>
+						<div itemprop="text" <?php post_class(); ?>>
 
 							<?php the_content(); ?>
 						</div>
-						<?php comments_template(); ?>
+						<div id="commentaires">
+							<?php comments_template(); ?>
+						</div>
+
 					</article>
 
 

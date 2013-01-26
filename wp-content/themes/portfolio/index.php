@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-	<div id="content">
+	<div id="content" role="main">
 		<div id="accuP">
                     <div id="imageFond"><img width="880px" height="524px" alt="Etienne Denoel WebDesigner & WebDeveloper" src="<?php bloginfo('template_url') ?>/img/moi.png" /></div>
 		    <div id="pres" class="dbf">

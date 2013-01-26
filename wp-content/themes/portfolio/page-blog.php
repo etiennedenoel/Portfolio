@@ -19,13 +19,15 @@
                 </div>
             </div>
         </div>
-<div id="content">
+	<div id="content" role="main">
 		<?php
 			get_sidebar('primary');
 		?>
-                <div id="newsB">
+        <div id="newsB">
 
-				<?php
+        	<section>
+        		<h2 class="cache">Blog</h2>
+        		<?php
 					query_posts('posts_per_page= 5');
 					if(have_posts()):
 					while(have_posts()):
@@ -34,13 +36,13 @@
 				?>
 				<?php global $more; $more = 0; ?>
 
-					<article class="dbf">
-					<?php the_post_thumbnail('folio-works'); ?>
+					<article class="dbf" itemscope="" itemtype="http://schema.org/Blog">
+						<?php the_post_thumbnail('folio-works'); ?>
 						<hgroup>
-							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-							<h4><?php _e('Publié le') ?> <?php echo get_the_date(); ?></h4>
+							<h3 itemprop="name"><a href="<?php the_permalink(); ?>" title="Aller vers <?php the_title(); ?>" hreflang="fr"><?php the_title(); ?></a></h3>
+							<h4 itemprop="datePublished"><?php _e('Publié le') ?> <?php echo get_the_date(); ?></h4>
 						</hgroup>
-						<div <?php post_class(); ?>>
+						<div itemprop="description" <?php post_class(); ?>>
 						    <?php the_content(); ?>
 						</div>
 
@@ -51,9 +53,10 @@
 					endif;
 				?>
 				<?php wp_pagenavi(); ?>
-		</div>
+        	</section>
 
-            </div>
+		</div>
+	</div>
 <?php
 	get_footer();
 

@@ -1,10 +1,10 @@
+
 <?php
 	get_header();
 ?>
 <style type="text/css">
 	i, .social{display: none;}
 	.city{margin-left: 0;}
-
 </style>
 <div id="profo">
             <h2 id="tSlide">Derniers Travaux</h2>
@@ -24,10 +24,10 @@
                 </div>
             </div>
         </div>
-<div id="content">
+<div id="content" role="main">
 	<div id="accuP">
       	<div id="imageFond">
-      		<img width="880px" height="524px" alt="Etienne Denoel WebDesigner & WebDeveloper" src="<?php bloginfo('template_url') ?>/img/moi.png" />
+      		<img width="880" height="524" alt="Etienne Denoel WebDesigner & WebDeveloper" src="http://static.etiennedenoel.be/img/moi2.jpg" />
       	</div>
 	    <div id="pres" class="dbf">
 
@@ -43,9 +43,9 @@
 				endwhile;
 				endif;
 			?>
-			<div class="sep">
+			<div class="sep" itemscope="" itemtype="http://schema.org/JobPosting">
 				<hgroup>
-					<h2 class="titre">Compétences</h3>
+					<h3 class="titre">Compétences</h3>
 		        	<h4>Programmes & langages</h4>
 				</hgroup>
 
@@ -59,7 +59,7 @@
 		                        $loop->the_post();
 
 		                ?>
-		                    <li><p class="nom"><?php the_content(); ?></p><span class="rate"><span class="<?php echo get_post_meta($post->ID, 'classe', true); ?>">.</span></span></li>
+		                    <li itemprop="skills"><?php the_content(); ?><span class="rate"><span class="<?php echo get_post_meta($post->ID, 'classe', true); ?>">.</span></span></li>
 		                <?php
 		                    endwhile;
 		                    endif;
@@ -67,18 +67,16 @@
 		            </ul>
 
 			</div>
+			<div class="sep">
 			<?php
 				$args = array( 'post_type' => 'check', 'name' => 'informations' );
 				$loop = new WP_Query( $args );
 				if ( $loop->have_posts() ) :
-
 					while($loop->have_posts()):
 						$loop->the_post();
-
 			?>
-			<div class="sep" <?php post_class(); ?>>
 				<hgroup>
-					<h2 class='titre'>Contact</h2>
+					<h3 class='titre'>Contact</h3>
 					<h4>Coordonées</h4>
 				</hgroup>
 
@@ -92,35 +90,39 @@
 		</div>
 
 		<div id="news">
-			<h2>Dernières news</h2>
-			<?php
-				query_posts('showposts=3');
-				if(have_posts()):
-				while(have_posts()):
+			<section>
+				<h2>Dernières news</h2>
+				<?php
+					query_posts('showposts=3');
+					if(have_posts()):
+					while(have_posts()):
 
-				the_post();
-			?>
-			<?php global $more; $more = 0; ?>
+					the_post();
+				?>
+				<?php global $more; $more = 0; ?>
 
-				<article class="dbf">
-				<?php the_post_thumbnail('folio-works'); ?>
-					<hgroup>
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<h4><?php _e('Publié le') ?> <?php echo get_the_date(); ?></h4>
-					</hgroup>
-					<div class="art" <?php post_class(); ?>>
-					    <?php the_content(); ?>
-					</div>
+					<article role="article"  class="dbf">
+					<?php the_post_thumbnail('folio-works'); ?>
+						<hgroup>
+							<h3><a href="<?php the_permalink(); ?>" title="Aller vers <?php the_title(); ?>"  hreflang="fr"><?php the_title(); ?></a></h3>
+							<h4><?php _e('Publié le') ?> <?php echo get_the_date(); ?></h4>
+						</hgroup>
+						<div class='art'>
+						    <?php the_content(); ?>
+						</div>
 
-				</article>
+					</article>
 
 
-			<?php
-				endwhile;
-				endif;
-			?>
+				<?php
+					endwhile;
+					endif;
+				?>
+			</section>
+
 		</div>
 	</div>
+</div>
 <?php
 	get_footer();
 

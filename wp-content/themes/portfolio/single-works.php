@@ -20,7 +20,7 @@
     </div>
 </div>
 
-	<section id="content">
+	<div id="content" role="main">
 
 		<?php
 					if(have_posts()):
@@ -28,15 +28,13 @@
 					the_post();
 				?>
 				<section class="dbf a840">
-					<article class='travail'>
+					<article class='travail' itemscope="" itemtype="http://schema.org/CreativeWork">
 
-                                            <h2 class="titre"><?php the_title(); ?></h2>
-                                            <p class="dateP"><?php _e('Publié le') ?> <?php echo get_the_date(); ?> par <?php echo get_the_author(); ?></p>
-
-                                            <div <?php post_class(); ?>>
-                                                    <?php the_post_thumbnail('medium'); ?>
-                                                    <?php the_content(); ?>
-                                            </div>
+                        <h2 class="titre" itemprop="name"><?php the_title(); ?></h2>
+                        <div <?php post_class(); ?>>
+                                <?php the_post_thumbnail('medium'); ?>
+                                <?php the_content(); ?>
+                        </div>
 
 					</article>
 
@@ -46,7 +44,7 @@
 					endif;
 				?>
 
-	</section>
+	</div>
 <?php
 	get_footer();
 

@@ -24,7 +24,7 @@
         </div>
     </div>
 </div>
-<section id="content">
+<div id="content" role="main">
     <h2 class="titre tax">Travaux dans: <?php echo($term -> name); ?></h1>
     <div id="gallery">
 			<ul>
@@ -35,15 +35,15 @@
     ?>
 
             <li>
-					<div <?php post_class(); ?>>
-						<a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>"><?php the_post_thumbnail('folio-work'); ?></a>
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<h4 class="tech"><?php echo(get_the_term_list($post->ID, "techniques")); ?></h4>
-						<?php the_excerpt(); ?>
-						<a class='plusInf' href="<?php the_permalink(); ?>" title="Plus d'informations sur le travail">Plus d'infos</a>
+				<div <?php post_class(); ?>>
+					<a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>" hreflang="fr"><?php the_post_thumbnail('folio-work'); ?></a>
+					<h3><a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>" hreflang="fr"><?php the_title(); ?></a></h3>
+					<h4 class="tech"><?php echo(get_the_term_list($post->ID, "techniques")); ?></h4>
+					<?php the_excerpt(); ?>
+					<a class='plusInf' href="<?php the_permalink(); ?>" title="Plus d'informations sur le travail" hreflang="fr">Plus d'infos</a>
 
-					</div>
-					</li>
+				</div>
+			</li>
 
 
     <?php
@@ -52,7 +52,7 @@
     ?>
     </ul>
 		</div>
-</section>
+</div>
 <?php
 	get_footer();
 ?>

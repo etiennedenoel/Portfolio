@@ -410,7 +410,7 @@ blockquote, q {
             vertical-align: baseline;
         }
 
-	#news section{
+	#news article{
 		text-shadow: 1px 1px rgba(0,0,0, .15);
 		background: url("./img/bg-op.png") repeat scroll 0 0 transparent;
 		box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
@@ -876,15 +876,15 @@ blockquote, q {
 
 
 	span.a85 {
-	    background: url("./img/progress.png") no-repeat scroll 0 0 transparent;
+		background: url('./img/sprite.png') no-repeat -5px -6px;
+		width: 85px;
+		height: 10px;
 	    display: block;
-	    height: 10px;
-            width: 85%;
-
-            color: rgba(0,0,0,0);
+        width: 85%;
+        color: rgba(0,0,0,0);
 	}
         span.a65 {
-	    background: url("./img/progress.png") no-repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 65%;
@@ -893,7 +893,7 @@ blockquote, q {
 	}
 
         span.a75 {
-	    background: url("./img/progress.png") no-repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 75%;
@@ -902,7 +902,7 @@ blockquote, q {
 	}
 
         span.a55 {
-	    background: url("./img/progress.png") no-repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 55%;
@@ -910,14 +910,14 @@ blockquote, q {
             text-indent: 999999999px;
 	}
 	.rate {
-	    background: url("./img/fondprogress.png") no-repeat scroll 0 0 transparent;
-            color: transparent;
-            display: inline-block;
-            height: 10px;
-            line-height: 10px;
-            margin: 5px 10px 0 5px;
-            float: right;
-            width: 100px;
+	    background: url('./img/sprite.png') no-repeat -8px -26px;
+        color: transparent;
+        display: inline-block;
+        height: 10px;
+        line-height: 10px;
+        margin: 5px 10px 0 5px;
+        float: right;
+        width: 100px;
 	}
 	#bienv{
 		font-size: 1.8em;
@@ -1207,7 +1207,7 @@ blockquote, q {
 #featured {
 	width: 900px;
 	height: 280px;
-	background: #000 url('/img/loading.gif') no-repeat center center;
+	background: #000;
 	overflow: hidden; }
 #featured>img,
 #featured>div,
@@ -1345,28 +1345,28 @@ div.slider-nav {
 
 div.slider-nav span {
     width: 49px;
-    height: 68px;
+    height: 50px;
     text-indent: -9999px;
     position: absolute;
     z-index: 1000;
-    top: 100px;
+    top: 115px;
     cursor: pointer; }
 
 div.slider-nav span.right {
-    background: url(img/droite.png);
+    background: url('img/sprite.png') no-repeat -80px -58px;
     right: 17px;
     margin-right: -65px;
     &:hover{
-    	background: url(img/droiteH.png);
+    	background: url('img/sprite.png') no-repeat -84px -121px;
     }
 }
 
 div.slider-nav span.left {
-    background: url(img/gauche.png);
+    background: url('img/sprite.png') no-repeat -19px -58px;
     left: 17px;
 	margin-left: -65px;
 	&:hover{
-		background: url(img/gaucheH.png);
+		background: url('img/sprite.png') no-repeat -20px -121px;
 	}
 }
 
@@ -1431,7 +1431,11 @@ div.slider-nav span.left {
 
 
 @media screen and (min-width:600px) and (max-width: 889px){
-
+.travail{
+	img{
+		margin: 20px auto;
+	}
+}
 .envoyer{
 	top: 20%;
 	left : 30%;
@@ -1538,6 +1542,7 @@ div.slider-nav span.left {
 	}
 
 	#pres h2{
+
 		margin: 10px 0 10px 0;
 		font-size: 1.5em;
 		font-weight: bold;
@@ -1581,7 +1586,7 @@ div.slider-nav span.left {
         }
 
 
-	#news section{
+	#news article{
 		text-shadow: 1px 1px rgba(0,0,0, .15);
 		background: url("./img/bg-op.png") repeat scroll 0 0 transparent;
 		box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
@@ -1884,7 +1889,7 @@ div.slider-nav span.left {
 		letter-spacing: 0.05em;
 		margin: 10px 0 10px 0;
 		color: #d57a1c;
-		text-shadow: 1px 1px rgba(0,0,0, .1);
+
 	}
 
 	.envoyer{
@@ -2021,7 +2026,7 @@ div.slider-nav span.left {
             color: rgba(0,0,0,0);
 	}
         span.a65 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+        	background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 65%;
@@ -2030,7 +2035,7 @@ div.slider-nav span.left {
 	}
 
         span.a75 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 75%;
@@ -2039,7 +2044,7 @@ div.slider-nav span.left {
 	}
 
         span.a55 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 55%;
@@ -2048,11 +2053,12 @@ div.slider-nav span.left {
             z-index: 9999;
 	}
 	.rate {
-	    background: url("./img/fondprogress.png") no-repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -8px -26px;
 	    display: inline-block;
 	    height: 10px;
+	    float: right;
             line-height: 10px;
-	    margin: 5px 0 0 5px;
+	    margin: 5px 33px 0 5px;
 	    width: 100px;
             color: rgba(0,0,0,0);
             text-indent: 9999999px;
@@ -2208,9 +2214,9 @@ div.slider-nav span.left {
 	/*****************Blog****************/
 
 	#newsB section{
-		width: 300px;
+		width: 320px;
 		float: left;
-		margin: 20px 0 20px 0
+		margin: 0px 0 20px 0
 	}
 	#newsB h2{
 		margin-left: 20px;
@@ -2224,7 +2230,6 @@ div.slider-nav span.left {
 
 	#newsB{
 		article{
-			width: 57%;
 			margin-bottom: 20px;
 			h3{
 				a{
@@ -2531,7 +2536,7 @@ div.slider-nav span.left {
         }
 
 
-	#news section{
+	#news article{
 		text-shadow: 1px 1px rgba(0,0,0, .15);
 		background: url("./img/bg-op.png") repeat scroll 0 0 transparent;
 		box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
@@ -2827,7 +2832,7 @@ div.slider-nav span.left {
 		letter-spacing: 0.05em;
 		margin: 10px 0 10px 0;
 		color: #d57a1c;
-		text-shadow: 1px 1px rgba(0,0,0, .1);
+
 	}
 
 	.envoyer{
@@ -2962,7 +2967,7 @@ div.slider-nav span.left {
             color: rgba(0,0,0,0);
 	}
         span.a65 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 65%;
@@ -2971,7 +2976,7 @@ div.slider-nav span.left {
 	}
 
         span.a75 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 75%;
@@ -2980,7 +2985,7 @@ div.slider-nav span.left {
 	}
 
         span.a55 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 55%;
@@ -2989,9 +2994,10 @@ div.slider-nav span.left {
             z-index: 9999;
 	}
 	.rate {
-	    background: url("./img/fondprogress.png") no-repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -8px -26px;
 	    display: inline-block;
 	    height: 10px;
+	    float: right;
             line-height: 10px;
 	    margin: 5px 0 0 5px;
 	    width: 100px;
@@ -3148,9 +3154,9 @@ div.slider-nav span.left {
 	/*****************Blog****************/
 
 	#newsB section{
-		width: 300px;
+
 		float: left;
-		margin: 20px 0 20px 0
+		margin: 0px 0 20px 0
 	}
 	#newsB h2{
 		margin-left: 20px;
@@ -3164,7 +3170,6 @@ div.slider-nav span.left {
 
 	#newsB{
 		article{
-			width: 90%;
 			margin-bottom: 20px;
 			h3{
 				a{
@@ -3411,7 +3416,7 @@ div.slider-nav span.left {
 		margin: 0 0 20px 0;
 	}
 
-	#news section{
+	#news article{
 		text-shadow: 1px 1px rgba(0,0,0, .15);
 		background: url("./img/bg-op.png") repeat scroll 0 0 transparent;
 		box-shadow: 0 0px 5px rgba(0, 0, 0, 0.5);
@@ -3419,7 +3424,7 @@ div.slider-nav span.left {
 		margin-top: 20px;
 		padding: 10px 20px;
 	}
-	article.single img{
+	article.single img.wp-post{
             width: 220px;
             height: 220px;
         }
@@ -3614,7 +3619,7 @@ div.slider-nav span.left {
 		font-size: 1em;
 		line-height: 2.2em;
 		margin-right: 20px;
-		text-shadow: 1px 1px rgba(0,0,0, .2);
+
 		margin-bottom: 20px;
 		address, .address{
 
@@ -3644,7 +3649,6 @@ div.slider-nav span.left {
 		letter-spacing: 0.05em;
 		margin: 10px 0 10px 0;
 		color: #d57a1c;
-		text-shadow: 1px 1px rgba(0,0,0, .1);
 	}
 
 	.envoyer{
@@ -3778,7 +3782,7 @@ div.slider-nav span.left {
             color: rgba(0,0,0,0);
 	}
         span.a65 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 65%;
@@ -3787,7 +3791,7 @@ div.slider-nav span.left {
 	}
 
         span.a75 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 75%;
@@ -3796,7 +3800,7 @@ div.slider-nav span.left {
 	}
 
         span.a55 {
-	    background: url("./img/progress.png") repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -5px -6px;
 	    display: block;
 	    height: 10px;
             width: 55%;
@@ -3804,10 +3808,10 @@ div.slider-nav span.left {
             text-indent: 999999999px;
 	}
 	.rate {
-	    background: url("./img/fondprogress.png") no-repeat scroll 0 0 transparent;
+	    background: url('./img/sprite.png') no-repeat -8px -26px;
 	    display: block;
 	    height: 10px;
-	    margin: 5px 0 0 95px;
+	    margin: 20px 0 20px 0px;
 	    width: 100px;
             color: rgba(0,0,0,0);
             text-indent: 9999999px;
@@ -4091,4 +4095,23 @@ input, textarea {
 .overflow{
 	overflow: hidden;
 }
-
+.cache{
+	display: none;
+}
+nav{
+	h2{
+		display: none;
+	}
+}
+#news{
+	section{
+		margin-top: 20px;
+	}
+}
+#featured, .orbit-wrapper{
+	width: 900px !important;
+}
+#commentaires{
+	clear: both;
+	line-height: 3em;
+}

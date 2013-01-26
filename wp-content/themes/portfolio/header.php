@@ -14,13 +14,13 @@
         <meta name="Keywords" content="etienne denoel, internet, design, web, web design, site, créations, creations, web developper, portfolio, infographiste, infographie, liège, belgique, inpres" >
         <link rel="icon" type="image/ico" href="<?php bloginfo('template_url') ?>/img/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="all" />
-
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/print.css" media="print" />
 
         <?php wp_head(); ?>
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/vendor/modernizr.js"></script>
+
 
     </head>
     <body>
@@ -32,8 +32,8 @@
                 <![endif]-->
 
                 <!-- Add your site or application content here -->
-                <div id="logo">
-                    <h1><a href="<?php bloginfo('url') ?>/index.php"><img width="345px" height="88px" alt="Etienne Denoel WebDesigner & WebDesigner" src="<?php bloginfo('template_url') ?>/img/logo.png"></a></h1>
+                <div id="logo" role="banner">
+                    <h1><a href="<?php bloginfo('url') ?>/index.php" hreflang="fr" title="Etienne Denoel WebDesigner"><img width="345" height="88" alt="Etienne Denoel WebDesigner & WebDesigner" src="<?php bloginfo('template_url') ?>/img/logo.png"></a></h1>
                 </div>
                 <?php
                     $defaults = array(
@@ -50,7 +50,7 @@
                         'after'           => '',
                         'link_before'     => '',
                         'link_after'      => '',
-                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'items_wrap'      => '<ul id="%1$s" class="%2$s"><h2 class="">Menu de navigation</h2>%3$s</ul>',
                         'depth'           => 0,
                         'walker'          => ''
                     );

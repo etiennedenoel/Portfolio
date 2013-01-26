@@ -51,9 +51,9 @@ get_header(); ?>
 					<?php the_post_thumbnail('folio-work'); ?>
 						<section class="contenu">
 							<hgroup>
-								<h3 class="search"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<h3 class="search"><a href="<?php the_permalink(); ?>" title="Voir plus d'informations sur l'élément'" ><?php the_title(); ?></a></h3>
 							</hgroup>
-							<div class="search" <?php post_class(); ?>>
+							<div class="search">
 							    <?php the_content(); ?>
 							</div>
 						</section>

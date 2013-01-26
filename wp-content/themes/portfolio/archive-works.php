@@ -4,7 +4,7 @@ remove_filter('the_content','wpautop');
 get_header();
 	get_header();
 ?>
-	<section id="content">
+	<div id="content" role="main">
 		<div id="gallery">
 			<ul>
 
@@ -16,13 +16,13 @@ get_header();
 								$loop->the_post();
 
 					?>
-					<li>
+					<li itemscope="" itemtype="http://schema.org/CreativeWork">
 
 					<div <?php post_class(); ?>>
 
-						<a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>"><?php the_post_thumbnail('folio-work'); ?></a>
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </h3>
-						<h4 class="tech"><?php echo(get_the_term_list($post->ID, "techniques")); ?></h4>
+						<a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>" itemprop="image"><?php the_post_thumbnail('folio-work'); ?></a>
+						<h3 itemprop="name"><a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>"><?php the_title(); ?></a> </h3>
+						<h4 class="tech" itemprop="genre"><?php echo(get_the_term_list($post->ID, "techniques")); ?></h4>
 						<?php the_excerpt(); ?>
 						<a class='plusInf' href="<?php the_permalink(); ?>" title="Plus d'informations sur le travail">Plus d'infos</a>
 
@@ -35,7 +35,7 @@ get_header();
 
 			</ul>
 		</div>
-	</section>
+	</div>
 <?php
 	get_footer();
 ?>

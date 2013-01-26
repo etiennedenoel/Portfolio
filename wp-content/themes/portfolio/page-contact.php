@@ -5,7 +5,7 @@
    	<h2 id="tSlide">Contactez-moi !</h2>
    	<div id="gmap"></div>
 </div>
-<div id="content">
+<div id="content" role="main">
 	<?php
 					if(isset($_POST["Valider"]))
 					{
@@ -18,10 +18,10 @@
 						$son_email = ''.$lechamp1.'';
 
 						if(empty($lechamp1)){
-							echo "<div id='overlay'><p class='envoyer'>Champ email vide.<br><a href=\"" . $mon_url . "\">Retour</a></p></div>";
+							echo "<div id='overlay'><p class='envoyer'>Champ email vide.<br><a title='Retourner sur la page Contact' href=\"" . $mon_url . "\">Retour</a></p></div>";
 						}
 						else if(empty($lechamp2)){
-							echo "<div id='overlay'><p class='envoyer'>Champ message vide.<br><a href=\"" . $mon_url . "\">Retour</a></p></div>";
+							echo "<div id='overlay'><p class='envoyer'>Champ message vide.<br><a title='Retourner sur la page Contact' href=\"" . $mon_url . "\">Retour</a></p></div>";
 						}
 
 						else{
@@ -33,16 +33,16 @@
 								$entete .= "MIME-Version: 1.0";
 								if (@mail($mon_email,$lechamp1,$lechamp2,$entete))
 								{
-									echo "<div id='overlay'><p class='envoyer'>Votre message a été envoyé.<br><a href=\"" . $mon_url . "\">Retour</a></p></div>\n";
+									echo "<div id='overlay'><p class='envoyer'>Votre message a été envoyé.<br><a title='Retourner sur la page Contact' href=\"" . $mon_url . "\">Retour</a></p></div>\n";
 
 								}
 								else
 								{
-									echo "<div id='overlay'><p class='envoyer'>Un problème s'est produit lors de l'envoi du message.<br><a href=\"" . $mon_url . "\">Retour</a></p></div>\n";
+									echo "<div id='overlay'><p class='envoyer'>Un problème s'est produit lors de l'envoi du message.<br><a title='Retourner sur la page Contact' href=\"" . $mon_url . "\">Retour</a></p></div>\n";
 								}
 							}
 							else{
-								echo "<div id='overlay'><p class='envoyer'>Adresse email invalide !.<br><a href=\"" . $mon_url . "\">Réessayer</a></p></div>\n";
+								echo "<div id='overlay'><p class='envoyer'>Adresse email invalide !.<br><a title='Retourner sur la page Contact' href=\"" . $mon_url . "\">Réessayer</a></p></div>\n";
 							}
 
 						//on ferme le else
@@ -61,7 +61,7 @@
 								$loop->the_post();
 
 					?>
-					<div class="infos" <?php post_class(); ?>>
+					<div class="infos" itemscope="" itemtype="http://schema.org/Person">
 						<h3 class="titre"><?php the_title(); ?></h3>
 						<?php the_content(); ?>
 
@@ -72,7 +72,7 @@
 					?>
 		</div>
 	</div>
-
+ <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDvPpy1_HR2zeap8wNNboUm2uQl9q1PiFY&sensor=false"></script>
 <?php
 	get_footer();
 
