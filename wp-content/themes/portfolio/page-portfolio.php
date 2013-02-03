@@ -35,7 +35,7 @@
 						<article role="article" itemscope="" itemtype="http://schema.org/CreativeWork" <?php post_class(); ?>>
 							<a href="<?php the_permalink(); ?>" title="Vers <?php the_title(); ?>" itemprop="image"><?php the_post_thumbnail('folio-work'); ?></a>
 							<h3 itemprop="name"><a href="<?php the_permalink(); ?>" title="Plus d'informations sur le travail"><?php the_title(); ?></a> </h3>
-							<h4 class="tech" itemprop="genre"><?php echo(get_the_term_list($post->ID, "techniques")); ?></h4>
+							<span class="tech" itemprop="genre"><?php echo(get_the_term_list($post->ID, "techniques")); ?></span>
 							<?php the_excerpt(); ?>
 							<a class='plusInf' href="<?php the_permalink(); ?>" title="Plus d'informations sur le travail">Plus d'infos</a>
 						</article>

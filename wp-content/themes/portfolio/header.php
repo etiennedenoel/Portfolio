@@ -6,7 +6,6 @@
 <!--[if lt IE 9]><script src="<?php echo get_bloginfo('template_directory') ;?>/js/vendor/modernizr.js"></script><![endif]-->
     <head>
         <meta charset="<?php bloginfo('charset') ?>">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php bloginfo('name') ?></title>
         <meta name="description" content="<?php bloginfo('description') ?>">
         <meta name="viewport" content="initial-scale=1.0">
@@ -50,7 +49,7 @@
                         'after'           => '',
                         'link_before'     => '',
                         'link_after'      => '',
-                        'items_wrap'      => '<ul id="%1$s" class="%2$s"><h2 class="">Menu de navigation</h2>%3$s</ul>',
+                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                         'depth'           => 0,
                         'walker'          => ''
                     );

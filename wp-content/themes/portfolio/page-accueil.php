@@ -2,10 +2,7 @@
 <?php
 	get_header();
 ?>
-<style type="text/css">
-	i, .social{display: none;}
-	.city{margin-left: 0;}
-</style>
+
 <div id="profo">
             <h2 id="tSlide">Derniers Travaux</h2>
             <div id="larg" class="slider-wrapper">
@@ -123,6 +120,10 @@
 		</div>
 	</div>
 </div>
+<style type="text/css">
+	i, .social{display: none;}
+	.city{margin-left: 0;}
+</style>
 <?php
 	get_footer();
 
